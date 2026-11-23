@@ -1,0 +1,21 @@
+{
+    "name":  "flipfloor-lite",
+    "description":  "FlipFloor Lite marketplace.",
+    "owner":  {
+                  "name":  "FlipFloor"
+              },
+    "plugins":  [
+                    {
+                        "name":  "flipfloor-lite",
+                        "source":  "./",
+                        "description":  "Read-only liquidation reports and listing audits for B-Stock and pallet resellers on eBay, Vinted, Depop and Facebook Marketplace: price sheet from your manifest, lot P&L, morning and weekly reports.",
+                        "version":  "1.0.0",
+                        "category":  "productivity",
+                        "tags":  [
+                                     "reselling",
+                                     "ecommerce",
+                                     "liquidation"
+                                 ]
+                    }
+                ]
+}

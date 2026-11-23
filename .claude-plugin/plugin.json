@@ -1,0 +1,22 @@
+{
+    "name":  "flipfloor-lite",
+    "displayName":  "FlipFloor Lite",
+    "version":  "1.0.0",
+    "description":  "Read-only liquidation reports and listing audits for B-Stock and pallet resellers on eBay, Vinted, Depop and Facebook Marketplace: price sheet from your manifest, lot P&L, morning and weekly reports.",
+    "author":  {
+                   "name":  "FlipFloor"
+               },
+    "homepage":  "https://github.com/pcombs08/flipfloor-lite",
+    "license":  "MIT",
+    "keywords":  [
+                     "b-stock",
+                     "liquidation",
+                     "reselling",
+                     "ebay",
+                     "vinted",
+                     "depop",
+                     "facebook-marketplace",
+                     "pallets",
+                     "inventory"
+                 ]
+}
