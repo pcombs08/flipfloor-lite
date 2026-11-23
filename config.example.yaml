@@ -1,0 +1,66 @@
+# FlipFloor Lite configuration
+# (FlipFloor Pro adds settings for its nightly run.)
+# Copy this file to config.yaml in your working folder and replace every CHANGE_ME.
+# Percentages are fractions of the manifest's unit retail (0.50 = 50%).
+# Keep values on one line each; the price-sheet script reads this file with a simple parser.
+
+goal: speed                      # speed | margin  (speed = move inventory fast)
+
+lot:
+  id: CHANGE_ME                  # e.g. your B-Stock lot / auction ID
+  source: B-Stock                # marketplace you bought from
+  category: CHANGE_ME            # e.g. rugs, small appliances, apparel, toys
+  retailer: CHANGE_ME            # original retailer name used in descriptions ("Retail $X at <retailer>")
+  condition: Used - Good         # condition stated on the manifest
+  manifest_csv: data/manifest.csv
+  cost_total: 0                  # what you paid incl. buyer premium + freight, for P&L reports
+  fees_estimate_pct: 0.15        # rough platform + payment fees, for P&L reports
+
+# Map the manifest's column headers to the fields the script needs.
+# Defaults match a standard B-Stock manifest export.
+manifest_columns:
+  item_no: Item #
+  description: Item Description
+  qty: Qty
+  unit_retail: Unit Retail
+  brand: Brand
+  upc: UPC
+
+pricing:
+  list_pct_of_retail: 0.50
+  offer_floor_pct: 0.40
+  markdown_below_offer_floor_after_days: 7
+  hard_floor_pct: 0.30           # never go below without asking the owner
+  unmatched_floor_pct_of_list: 0.80
+  keep_existing_below_floor: true
+  rounding: 0.5                  # round list prices to the nearest 0.50 (use 1 for whole dollars, 0.01 for none)
+  tier_a_min_retail: 90          # tiers by unit retail: A >= 90, B >= 40, C >= 20, else D
+  tier_b_min_retail: 40
+  tier_c_min_retail: 20
+
+platforms:
+  ebay: true
+  vinted: true
+  depop: true
+  facebook: true
+
+accounts:
+  ebay:
+    seller_username: CHANGE_ME
+  vinted:
+    domain: www.vinted.com       # your Vinted country domain
+    user_id: CHANGE_ME           # numeric member id (from your profile URL /member/<id>)
+    ids:                         # auto = Claude copies them from one of your existing listings of the same kind
+      catalog_id: auto
+      package_size_id: auto
+  depop:
+    shop: CHANGE_ME
+  facebook:
+    location: CHANGE_ME          # City, State; used only in local-pickup lines
+
+audit:
+  min_photos: 4
+  research_max_age_days: 14
+
+logging:
+  include_buyer_handles: false
